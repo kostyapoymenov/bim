@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Pragmatica" , Arial, Helvetica, sans-serif;
+  line-height: 1.42;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.body-hidden {
+    overflow: hidden;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, p {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a, button {
+  text-decoration: none;
+  background-color: #ffffff;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  position: relative;
+  border:none;
+  outline:none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  padding: 12px;
+  color: #000;
+  @include font-size(14px);
+  font-weight: 500;
+  outline-color: $orange;
+  border: 1px solid #e5e5e5;
+  font-family: "Pragmatica";
+}
+
+input,
+select
+{
+  width: 100%;
+  padding: 8px 12px;
+  color: #000;
+  @include font-size(14px);
+  font-weight: 500;
+  outline-color: $orange;
+  border: 1px solid #e5e5e5;
+
+  &[type='submit']
+  {
+    border: none;
+  }
+}
+
+.label-checkbox
+{
+  padding-left: 27px;
+  display: inline-block;
+}
+
+.input-checkbox
+{
+  opacity: 0;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  z-index: 1;
+  cursor: pointer;
+
+  &-block
+  {
+    margin-bottom: 10px;
+  }
+
+  &:checked 
+  {
+    + .my-checkbox 
+    {
+      background-color: $orange;
+      border: 1px solid transparent;
+      
+      &:after 
+      {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.my-checkbox 
+{
+  height: 18px;
+  width: 18px;
+  border: 1px solid $darkGrey;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  
+  &:after 
+  {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    background-image: url(../images/icons/check.png);
+    height: 12px;
+    width: 12px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 3px;
+    left: 2px;
+  }
+}

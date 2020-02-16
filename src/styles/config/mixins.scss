@@ -1,0 +1,55 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin noute1150 {
+  @media screen and (max-width: $noute1150) {
+    @content
+  }
+}
+
+@mixin noute950 {
+  @media screen and (max-width: $noute950) {
+    @content
+  }
+}
+
+@mixin noute800 {
+  @media screen and (max-width: $noute800) {
+    @content
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content
+  }
+}
+
+@mixin phones-xs {
+  @media screen and (max-width: $phones-xs) {
+    @content
+  }
+}
+
+@mixin phones-xss {
+  @media screen and (max-width: $phones-xss) {
+    @content
+  }
+}
+
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}

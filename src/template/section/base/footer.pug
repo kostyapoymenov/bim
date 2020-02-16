@@ -1,0 +1,29 @@
+footer.footer
+  .container
+    .footer-inner 
+      a.footer__link(href="")
+        .footer__logo
+          svg.footer__logo_svg(width='100%' height='100%')
+              use(xlink:href=`images/icons/sprite.svg#logo_grey`)
+      .footer__content
+        .footer__content_adress г. Москва, Вадковский пер., д. 12,<br> этаж 1, помещение 1
+        .footer__content_contacts
+          .footer__content_number
+            a.footer__content_tel(href="tel:+79636932222") +7 (963) 693 22-22
+            a.footer__content_tel(href="tel:+79057188284") +7 (905) 718 82-84
+          .footer__content__social
+            .social
+              -
+                  var socials = [
+                      ['youtube','#'],
+                      ['twitter','#'],
+                      ['facebook','#'],
+                      ['instagram','#'],
+                      ['vk','#']
+                      ]
+              ul.social__list
+                  each social in socials
+                      li.social__item
+                          a(class=`social__link social__link_${social[0]}` href=`${social[1]}` target="_blank")
+                              svg.social__link_svg(width='100%' height='100%')
+                                  use(xlink:href=`images/icons/sprite.svg#${social[0]}`)

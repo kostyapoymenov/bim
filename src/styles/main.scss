@@ -1,0 +1,21 @@
+//config
+@import "config/variable.scss";
+@import "config/mixins.scss";
+
+//resolutions
+$noute1150: 1150px;
+$noute950: 950px;
+$noute800: 800px;
+$tablets: 768px;
+$phones: 667px;
+$phones-xs: 568px;
+$phones-xss: 455px;
+
+
+//base
+@import "layout/font.scss";
+@import "layout/base.scss";
+@import "layout/adjustment.scss";
+
+//pages
+@import "pages/index.scss";
