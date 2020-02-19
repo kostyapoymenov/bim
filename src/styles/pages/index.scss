@@ -18,12 +18,24 @@
     display: flex;
     align-items: center;
     width: 63%;
+    @include noute1150 {
+      width: 85%;
+    }
+    @include noute950 {
+      width: 92%;
+    }
+    @include tablets {
+      width: 20%;
+    }
   }
 
   &__left_logo {
     height: 80px;
     max-width: 80px;
     position: relative;
+    @include tablets {
+      height: 55px;
+    }
   }
 
   &__logo_link {
@@ -32,6 +44,9 @@
 
   &__left_nav {
     flex: 1;
+    @include tablets {
+      display: none;
+    }
   }
 
   &__right {
@@ -39,10 +54,22 @@
     align-items: center;
     justify-content: flex-end;
     width: 37%;
+    @include noute1150 {
+      width: 15%;
+    }
+    @include noute950 {
+      width: 8%;
+    }
+    @include tablets {
+      width: 80%;
+    }
   }
 
   &__right_soc {
     padding-left: 35px;
+    @include tablets {
+      padding-right: 70px;
+    }
   }
 }
 
@@ -58,6 +85,9 @@
     text-transform: uppercase;
     font-weight: 700;
     transition: all .3s ease;
+    @include noute1300 {
+      @include font-size (12px);
+    }
     &:hover {
       color: $orange;
       transition: all .3s ease;
@@ -69,6 +99,9 @@
   padding: 0 15px;
   display: flex;
   align-items: center;
+  @include noute1150 {
+    display: none;
+  }
   .input {
     max-width: 207px;
     flex: 1;
@@ -98,29 +131,49 @@
 }
 
 .section-hero {
-  padding: 6% 0 50px;
+  padding: 6% 0 0;
   background-color: $lightGrey;
   position: relative;
   overflow: hidden;
+  @include noute1150 {
+    padding: 8% 0 0;
+  }
 }
 
 .hero {
-  background-image: url(../images/bg/main-bg.png);
+  min-height: 100vh;
+  @include noute1150 {
+    min-height: 80vh;
+  }
+  @include phones {
+  background-image: url(../images/bg/hero-bg-mob.png);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: 100%;
-  min-height: 100vh;
-  background-color: $lightGrey;
+  height: 100vh;
+  position: relative;
+  }
 
   &-wrap {
-    padding-bottom: 50px;
     background-color: #fff;
     position: relative;
     overflow: hidden;
+    background-image: url(../images/bg/main-bg1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &-inner {
-    padding: 60px 0;
+    padding: 40px 0;
+    @include noute950 {
+      padding-top: 70px;
+    }
+    @include phones {
+      position: absolute;
+      top: 10vh;    
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__logo-block {
@@ -130,8 +183,15 @@
   }
 
   &__logo_svg {
-      max-height: 130px;
+      max-height: 100px;
       width: auto;
+      @include tablets {
+        max-height: 80px;
+        margin-top: 10px;
+      }
+      @include phones {
+        max-height: 150px;
+      }
   }
 
   &-title {
@@ -139,34 +199,28 @@
     text-align: center;
     font-weight: 700;
     margin-bottom: 40px;
-  }
-
-  &-triangle-border {
-    border: 1px solid $black;
-    transform: rotate(45deg);
-    position: absolute;
-    bottom: -34.1%;
-    left: calc(50% - 51vh);
-    height: 102vh;
-    width: 102vh;
-    z-index: 1;
-  }
-
-  &-triangle-bg {
-    background-color: rgba(255, 255, 255, .9);
-    transform: rotate(45deg);
-    position: absolute;
-    bottom: -47%;
-    left: calc(50% - 47.5vh);
-    height: 95vh;
-    width: 95vh;
+    @include phones {
+      display: none;
+    }
+    &-mob {
+      display: none;
+      @include phones {
+        @include font-size(26px);
+        display: block;
+        padding-top: 55vh;
+        text-align: center;
+      }
+    }
   }
 }
 
 .hero-condition {
   position: absolute;
-    bottom: 60px;    
-    width: 100%;
+  bottom: 20px;    
+  width: 100%;
+  @include phones {
+    position: relative;
+  }
 }
 
 .condition{
@@ -175,9 +229,30 @@
     justify-content: center;
     width: 45%;
     margin: 0 auto;
+    @include noute950 {
+      width: 70%;
+    }
+    @include tablets {
+      width: 80%;
+    }
+    @include phones {
+      background-color: $lightGrey;
+      margin: 0;
+      width: 100%;
+      padding: 30px 15px 0px;
+      flex-wrap: wrap;
+    }
   }
   &__item {
     align-items: center;
+    @include phones {
+      width: 50%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    @include phones-xs {
+      width: 100%;
+    }
   }
   &__item_icon{
     text-align: center;
@@ -192,6 +267,9 @@
     text-align: center;
     z-index: 20;
     padding: 0 10px;
+    @include phones {
+      @include font-size(16px);
+    }
   }
 }
 
@@ -209,6 +287,7 @@
 
 .course {
   background-size: cover;
+  background-position: center;
   width: 100%;
   padding: 5px 10px;
   text-align: center;
@@ -337,6 +416,9 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1;
+    @include tablets {
+      overflow-y: scroll;
+    }
     &_text {
       p {
         margin-bottom: 10px;
@@ -373,58 +455,65 @@
 }
 
 .section-double {
-  padding-top: 50px;
   background-color: $lightGrey;
   overflow: hidden;
   &__wrap {
-    background-image: url(../images/bg/double-bg.png);
-  }
-  .hero-triangle-border {
-    border: 2px solid $black;
-    top: 50%;
-    left: 50%;    
-    transform: translateY(-74%) translateX(-50%) rotate(45deg);
-    width: 145vh;
-    height: 145vh;    
-    z-index: 0;
+    background-image: url(../images/bg/team-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include phones {
+      background-image: none;
+      background-color: rgba(0, 0, 0, .9);
+    }
   }
 }
 .section-comand {
-  background-color: rgba($color: $darkGrey, $alpha: .9);
-  padding: 50px 0 70px;
+  padding: 100px 0 70px;
   overflow: hidden;
   position: relative;
   z-index: 1;
-  .hero-triangle-bg {
-    background-color: rgba(0, 0, 0, .49);
-    top: 50%;
-    left: 50%;    
-    transform: translateY(-47.5%) translateX(-50%) rotate(45deg);
-    width: 135vh;
-    height: 135vh;
-    z-index: -1;
+  @include tablets {
+    .block-4__item {
+      flex: 1 1 100%;
+      width: 100%;
+      max-width: calc( 100% - 20px );
+    }
+  }
+  @include phones-xs {
+    padding-bottom: 0;
+    padding: 50px 0;
   }
 }
 
 .comand {
   display: flex;
   position: relative;
+  @include phones-xs {
+    flex-direction: column;
+  }
   &__avatar {
-    flex: 1 1 50%;
+    flex: 1;
     position: relative;
     overflow: hidden;
+    @include phones-xs {
+      min-height: 300px;
+    }
     &_img {
       position: absolute;
       min-width: 100%;
-      height: auto;
+      height: 100%;
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
+      @include tablets {
+        height: auto;
+      }
     }
   }
   &__content {
     padding: 50px 20px;
-    flex: 1 1 50%;
+    flex: 1;
     color: $white;
     display: flex;
     flex-direction: column;
@@ -453,14 +542,13 @@
 }
 
 .section-reaction {
-  padding: 50px 0 30px;
-  background-color: rgba(244, 247, 255, .95);
+  padding: 50px 0;
+  background-color: $lightGrey;
 }
 
 .reaction {
-  overflow: hidden;
-  z-index: 1;
   padding: 1px 0 1px 1px;
+  overflow: hidden;
   &__mes {
     width: 100%;
     background-color: $white;
@@ -560,6 +648,9 @@
     padding: 40px 0 20px;
     width: 80%;
     margin: 0 auto;
+    @include noute950 {
+      width: 95%;
+    }
   }
 }
 
@@ -605,47 +696,26 @@
 
 
 .section-feedback {
-  padding-top: 50px;
   background-color: $lightGrey;
-  overflow: hidden;
-  z-index: -1;
   &-wrap {
-  background-image: url(../images/bg/feedback-bg.png);
-  padding: 50px 0 70px;
+  background-image: url(../images/bg/contact-bg.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 110px 0 90px;
   position: relative;
-  z-index: -1;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      z-index: -1;
-      background-color: rgba($color: $darkGrey, $alpha: .9);
-    }
-    .hero-triangle-border {
-      border: 2px solid $black;
-      top: 50%;
-      left: 50%;    
-      transform: translateY(-47.6%) translateX(-50%) rotate(45deg);
-      width: 145vh;
-      height: 145vh;    
-      z-index: -1;
-    }
-    .hero-triangle-bg {
-      background-color: rgba(0, 0, 0, .49);
-      top: 50%;
-      left: 50%;    
-      transform: translateY(-47.5%) translateX(-50%) rotate(45deg);
-      width: 135vh;
-      height: 135vh;
-      z-index: -1;
-    }
+  @include phones {
+    background-image: none;
+    background-color: rgba(0, 0, 0, .9);
+    padding: 50px 0;
+  }
   }
 }
 .feedback {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
   &__left {
     flex: 1 1 50%;
     background-color: $darkGrey;
@@ -684,15 +754,34 @@
 .form {
   .btn {
     width: calc(45% - 10px) ;
+    @include tablets {
+      max-width: 240px;
+    }
+    @include phones-xs {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 }
 
 .form__body {
   display: flex;
   margin: 0 -10px 20px;
+  @include phones-xs {
+    flex-direction: column;
+  }
 }
 .form-block {
   margin: 0 10px;
+  @include tablets {
+    width: 50%;
+  }
+  @include phones-xs {
+    width: 100%;
+    &:first-child {
+      margin-bottom: 15px;
+    }
+  }
 }
 .form-block__item {
   margin-bottom: rem(18px);

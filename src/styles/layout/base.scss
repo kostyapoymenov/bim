@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Pragmatica" , Arial, Helvetica, sans-serif;
+  font-family: "NatoSans" , Arial, Helvetica, sans-serif;
   line-height: 1.42;
   color: #000000;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +16,9 @@ html, body {
   height: 100%;
   font-size: 16px;
   scroll-behavior: smooth;
+  @include phones-xs {
+    font-size: 18px;
+  }
 }
 
 ul {

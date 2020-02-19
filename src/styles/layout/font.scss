@@ -1,15 +1,13 @@
 @font-face {
-  font-family: 'Pragmatica';
-  src:  url('../fonts/Pragmatica-Bold.woff') format('woff'),
-        url('../fonts/Pragmatica-Bold.woff') format('wof2');
-  font-weight: 700;
+  font-family: 'NatoSans';
+  src: url('../fonts/NotoSans.woff') format('woff');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Pragmatica';
-  src:  url('../fonts/Pragmatica-Book.woff') format('woff'),
-        url('../fonts/Pragmatica-Book.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'NatoSans';
+  src:  url('../fonts/NotoSans-Bold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }

@@ -1,47 +1,57 @@
 $(document).ready(function() {
-  function sliders() {
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            items: 1,
-            nav: true,
-            loop: true,
-            margin:  50
-        });
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      nav: true,
+      loop: true,
+      margin: 50
     });
-  }
-  sliders();
+
+    $(".owl-carousel-1").owlCarousel({
+        items: 1,
+        nav: true,
+        loop: true,
+        margin: 50
+    });
+
+    $(".owl-carousel-2").owlCarousel({
+        items: 1,
+        nav: true,
+        loop: true,
+        margin: 50
+    });
+
 });
 
-// burger();
+burger();
 
-// function burger(){
-//   const   burgerBtn = $('.burger'),
-//           burgerItem = $('.burger-nav__link'),
-//           burgerMenu = $('.burger-menu');
+function burger(){
+  const   burgerBtn = $('.burger'),
+          burgerItem = $('.burger-nav__link'),
+          burgerMenu = $('.burger-menu');
 
-//   burgerBtn.on('click', function(){
-//     burgerBtn.toggleClass('burger--active');
-//     burgerMenu.toggleClass('burger-menu--active');
-//     if(burgerBtn.hasClass('burger--active')){
-//       $('body').addClass('body-hidden');
-//     } else {
-//       $('body').removeClass('body-hidden');
-//     }
-//   });
+  burgerBtn.on('click', function(){
+    burgerBtn.toggleClass('burger--active');
+    burgerMenu.toggleClass('burger-menu--active');
+    if(burgerBtn.hasClass('burger--active')){
+      $('body').addClass('body-hidden');
+    } else {
+      $('body').removeClass('body-hidden');
+    }
+  });
 
-//   burgerMenu.on('click', function(event){
-//     var target = event.target;
+  burgerMenu.on('click', function(event){
+    var target = event.target;
 
-//     for(var i = 0; i < burgerItem.length; i++){
-//       if(target == burgerItem[i]){
-//         burgerBtn.removeClass('burger--active');
-//         burgerMenu.removeClass('burger-menu--active');
-//         $('body').removeClass('body-hidden');
-//         scroll(burgerItem[i]);
-//       }
-//     }
-//   });
-// }
+    for(var i = 0; i < burgerItem.length; i++){
+      if(target == burgerItem[i]){
+        burgerBtn.removeClass('burger--active');
+        burgerMenu.removeClass('burger-menu--active');
+        $('body').removeClass('body-hidden');
+        scroll(burgerItem[i]);
+      }
+    }
+  });
+}
 
 // modalForm('.btn-order', '#formConsultModal');
 // modalForm('.btn-callback', '#formCallbackModal');

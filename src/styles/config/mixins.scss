@@ -8,6 +8,12 @@
   font-size: calculateRem($size);
 }
 
+@mixin noute1300 {
+  @media screen and (max-width: $noute1300) {
+    @content
+  }
+}
+
 @mixin noute1150 {
   @media screen and (max-width: $noute1150) {
     @content

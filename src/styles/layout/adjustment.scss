@@ -1,7 +1,6 @@
 .container 
 {
   width: 100%;
-  max-width: rem(1674px);
   margin: 0 auto;
   padding: 0 15px;
   &-inner {
@@ -33,6 +32,9 @@
     width: 25%;
     text-align: right;
     background-color: $orange;
+    @include tablets {
+      width: auto;
+    }
   }
 }
 
@@ -133,10 +135,22 @@
       justify-content: center;
       width: 25%;
     }
+    @include phones-xs {
+      width: 100%;
+      min-width: 280px;
+      max-width: 100%;
+      min-height: 250px;
+    }
     &--w50 {
       flex: 1 1 50%;
       width: 50%;
-      max-width: calc( ( 100% - 40px ) / 2 ;
+      max-width: calc( ( 100% - 40px ) / 2 );
+      @include phones-xs {
+        width: 100%;
+        min-width: 280px;
+        max-width: 100%;
+        min-height: 250px;
+      }
     }
   }
 }
@@ -156,11 +170,9 @@
     width: calc( ( 100% - 60px ) / 3 );
     display: flex;
     border: 1px solid transparent;
-    @include noute1150 {
-      flex: 1 1 33.333%;
-      justify-content: center;
-      width: 33.333%;
-    }
+    flex: 1;
+    justify-content: center;
+    max-width: 33.333%;
   }
 }
 
@@ -232,4 +244,139 @@
     transform: rotate(180deg);
     background-position: 0 -2px;
   }
+}
+
+.burger-block {
+  display: none;
+  width: 45px;
+  height: 76px;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 10px;
+  z-index: 300;
+  cursor: pointer;
+  @include tablets {
+    display: block;
+  }
+}
+.burger {
+  display: block;
+  width: 35px;
+  height: 76px;    
+  margin: 0 auto;
+  transition: all .4s;
+  cursor: pointer;
+  position: relative;
+  &--active {
+    .burger__line {
+      background-color: $darkGrey;
+      transition: all .4s;
+    }
+    .burger__line--1 {
+      animation: burgerline1 .4s forwards;
+    }
+    .burger__line--2 {
+      animation: burgerline2 .4s forwards;
+    }
+    .burger__line--3 {
+      animation: burgerline3 .4s forwards;
+    }
+  }
+  &-text {
+    width: 80%;
+    margin: 0 auto 20px;
+    @include font-size(14px)
+  }
+}
+.burger__line {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  background: $orange;
+  transition: all .4s;
+  pointer-events: none;
+  &--1 {
+    top: 26px;
+  }
+  &--2 {
+    top: 36px;
+  }
+  &--3 {
+    top: 46px;
+  }
+}
+@keyframes burgerline1 {
+  0% {
+      top: 26px;
+  }
+  50% {
+      top: 34px;
+      transform: rotate(0);
+  }
+  100% {
+      top: 34px;
+      transform: rotate(45deg);
+  }
+}
+@keyframes burgerline2 {
+  0% {}
+  50% {}
+  100% {
+      opacity: 0;
+  }
+}
+@keyframes burgerline3 {
+  0% {
+      top: 42px;
+  }
+  50% {
+      top: 34px;
+      transform: rotate(0);
+  }
+  100% {
+      top: 34px;
+      transform: rotate(-45deg);
+  }
+}
+.burger-menu { 
+  background-color: rgba(245, 245, 246, 1);
+  padding-top: 50px;
+  width: 100%;
+  z-index: 200;
+  display: none;
+  position: fixed;
+  top: 50px;    
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  z-index: 9;
+  transition: all .5s ease;
+  &.burger-menu--active {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    transform: translateY(0);
+    transition: all .5s ease;
+  }
+  @include phones {
+    display: block;
+  }
+}
+.burger-nav {
+  height: 60%;    
+  padding-top: 5px;
+}
+.burger-nav__list {    
+  padding: 20px 30px;
+}
+.burger-nav__item {
+  margin-bottom: 10px;
+}
+.burger-nav__link {
+  @include font-size(20px);
+  position: relative;
+  color: $darkGrey;
 }
