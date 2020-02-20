@@ -1,21 +1,19 @@
 $(document).ready(function() {
     $('.owl-carousel').owlCarousel({
       items: 1,
-      nav: true,
+      navigation: true,
       loop: true,
       margin: 50
     });
 
     $(".owl-carousel-1").owlCarousel({
         items: 1,
-        nav: true,
         loop: true,
         margin: 50
     });
 
     $(".owl-carousel-2").owlCarousel({
         items: 1,
-        nav: true,
         loop: true,
         margin: 50
     });
