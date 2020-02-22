@@ -17,17 +17,17 @@ block content
 							nav.nav
 								ul.nav__list
 									li.nav__list__item
-										a.nav__list__link Главная
+										a.nav__list__link(href="#hero") Главная
 									li.nav__list__item
-										a.nav__list__link Контакты 
+										a.nav__list__link(href="#feedback") Контакты 
 									li.nav__list__item
-										a.nav__list__link Новости
+										a.nav__list__link(href="#news") Новости
 									li.nav__list__item
-										a.nav__list__link Клиенты и партнеры
+										a.nav__list__link(href="#partners") Клиенты и партнеры
 									li.nav__list__item
-										a.nav__list__link Наша команда
+										a.nav__list__link(href="#comand") Наша команда
 									li.nav__list__item
-										a.nav__list__link Курсы
+										a.nav__list__link(href="#couses") Курсы
 					.header__right
 						.header__right_btn
 							input.input(type="text") 
@@ -45,7 +45,7 @@ block content
 											a(class=`social__link social__link_${social[0]}` href=`${social[1]}` target="_blank")
 												svg.social__link_svg(width='100%' height='100%')
 													use(xlink:href=`images/icons/sprite.svg#${social[0]}`)
-		section.section-hero
+		section.section-hero#hero
 			.hero-wrap
 				.hero
 					.container
@@ -70,7 +70,7 @@ block content
 									svg.condition__item_svg(width='100%' height='100%')
 										use(xlink:href=`images/icons/sprite.svg#${cond[0]}`)
 								.condition__item_text= cond[1]
-		section.section.section--lgrey.section-couses
+		section.section.section--lgrey.section-couses#couses
 			h2.section-title Программирование
 			.container
 				.container-inner
@@ -79,16 +79,17 @@ block content
 							.block-4__item
 								.course(style="background-image: url(images/content/course/course-bg.png)")
 									.course__content
-										.course__title Revit Architecture
+										.course__title Navisworks Manage
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -101,13 +102,35 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
+											p После данного курса вы вы поймете, что 3DsMax - это не канон.
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -120,38 +143,21 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 											p После данного курса вы вы поймете, что 3DsMax - это не канон. Revit позволяет не только моделировать все что угодно (это точно), но и вывести рабочую документацию, автоматически сформировать ведомость отделки и конечно же использовать данную модель для дальнейшего рендера. Хоть в 3DsMax, хоть в Lumion. Но Revit так же можно превратить в площадку для визуализации с помощью дополнительных плагинов, таких как Vray! Как говриться "без посредников".
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
 										.ungle-block_item.ungle-block_item--br
 										.ungle-block_item.ungle-block_item--bl
-							.block-4__item
-								.course.course--fish
-									.ungle-block
-										.ungle-block_item.ungle-block_item--tl
-										.ungle-block_item.ungle-block_item--tr
-										.ungle-block_item.ungle-block_item--br
-										.ungle-block_item.ungle-block_item--bl
-							.block-4__item
-								.course(style="background-image: url(images/content/course/course-bg.png)")
-									.course__content
-										.course__title Revit Architecture
-										.course__pic
-											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
-										.course__price 14 000 руб.
-										.course__status Онлайн курс
-									.course__description
-										.course__description_text
-											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
-										.course__description_btn
-											a.btn(href="#") Подробнее
+							.block-4__item.course--fish
+								.course
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -164,12 +170,32 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
+									.ungle-block
+										.ungle-block_item.ungle-block_item--tl
+										.ungle-block_item.ungle-block_item--tr
+										.ungle-block_item.ungle-block_item--br
+										.ungle-block_item.ungle-block_item--bl
+							.block-4__item
+								.course(style="background-image: url(images/content/course/course-bg.png)")
+									.course__content
+										.course__title Revit Architecture
+										.course__pic
+											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
+										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
+										.course__status Онлайн курс
+									.course__description
+										.course__description_text
+											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
+										.course__description_btn
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -188,12 +214,13 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -206,13 +233,14 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 											p После данного курса вы вы поймете, что 3DsMax - это не канон. 
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -225,38 +253,21 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 											p После данного курса вы вы поймете, что 3DsMax - это не канон. Revit позволяет не только моделировать все что угодно (это точно), но и вывести рабочую документацию, автоматически сформировать ведомость отделки и конечно же использовать данную модель для дальнейшего рендера. Хоть в 3DsMax, хоть в Lumion. Но Revit так же можно превратить в площадку для визуализации с помощью дополнительных плагинов, таких как Vray! Как говриться "без посредников".
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
 										.ungle-block_item.ungle-block_item--br
 										.ungle-block_item.ungle-block_item--bl
-							.block-4__item
-								.course.course--fish
-									.ungle-block
-										.ungle-block_item.ungle-block_item--tl
-										.ungle-block_item.ungle-block_item--tr
-										.ungle-block_item.ungle-block_item--br
-										.ungle-block_item.ungle-block_item--bl
-							.block-4__item
-								.course(style="background-image: url(images/content/course/course-bg.png)")
-									.course__content
-										.course__title Revit Architecture
-										.course__pic
-											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
-										.course__price 14 000 руб.
-										.course__status Онлайн курс
-									.course__description
-										.course__description_text
-											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
-										.course__description_btn
-											a.btn(href="#") Подробнее
+							.block-4__item.course--fish
+								.course
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -269,12 +280,32 @@ block content
 										.course__pic
 											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
 										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
 										.course__status Онлайн курс
 									.course__description
 										.course__description_text
 											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
 										.course__description_btn
-											a.btn(href="#") Подробнее
+											button.btn.course__btn Подробнее
+									.ungle-block
+										.ungle-block_item.ungle-block_item--tl
+										.ungle-block_item.ungle-block_item--tr
+										.ungle-block_item.ungle-block_item--br
+										.ungle-block_item.ungle-block_item--bl
+							.block-4__item
+								.course(style="background-image: url(images/content/course/course-bg.png)")
+									.course__content
+										.course__title Revit Architecture
+										.course__pic
+											img.course__pic_img(src="images/content/course/course-tech.png", alt="")
+										.course__price 14 000 руб.
+										.btn.course__btn Подробнее
+										.course__status Онлайн курс
+									.course__description
+										.course__description_text
+											p Думаете BIM не для дизайнера интерьера? Вы сильно заблуждетесь.
+										.course__description_btn
+											button.btn.course__btn Подробнее
 									.ungle-block
 										.ungle-block_item.ungle-block_item--tl
 										.ungle-block_item.ungle-block_item--tr
@@ -282,7 +313,7 @@ block content
 										.ungle-block_item.ungle-block_item--bl
 		section.section.section-double
 			.section-double__wrap
-				.section-comand
+				.section-comand#comand
 					h2.section-title-text.section-title-text--white Наша команда
 					.container
 						.container-inner
@@ -368,11 +399,26 @@ block content
 										.reaction__data_name Есаулова Вера Владимировна
 										.reaction__data_prof Инженер-проектировщик
 										.reaction__data_company ООО "ИК "Санлайн"
-		section.section.section-partners
+								.reaction__item.reaction__item--1
+									.reaction__mes
+										.reaction__mes-inner
+											.reaction__mes_logo
+												img.reaction__mes_img(src="images/content/company/1.png", alt="")
+											.reaction__mes_text Просто и доступно рассказали обо всех базовых особенностях программы. Все самое необходимое узнали. Преподавателю Руслану спасибо за благожелательное отношение и умение понятно объяснить сложные вещи!
+										.ungle-block
+											.ungle-block_item.ungle-block_item--tl
+											.ungle-block_item.ungle-block_item--tr
+											.ungle-block_item.ungle-block_item--br
+											.ungle-block_item.ungle-block_item--bl
+									.reaction__data
+										.reaction__data_name Есаулова Вера Владимировна
+										.reaction__data_prof Инженер-проектировщик
+										.reaction__data_company ООО "ИК "Санлайн"
+		section.section.section-partners#partners
 			.container
 				.container-inner 
 					h2.section-title-text Клиенты и партнеры
-					.partners.owl-carousel-1
+					.partners
 						.partners__item
 							.partners__item_logo
 								img.partners__item_img(src="images/content/company/1.png", alt="")
@@ -392,14 +438,13 @@ block content
 								img.partners__item_img(src="images/content/company/8.png", alt="")
 							.partners__item_logo
 								img.partners__item_img(src="images/content/company/9.png", alt="")
-		section.section.section-news
+		section.section.section-news#news
 			.container
 				h2.section-title-text Новости
 				.container-inner 
-					.news.owl-carousel-2
+					.news
 						.news__item
-							.block-3
-								.block-3__item
+							.owl-carousel-2
 									.new
 										.new__top
 											.new__pic
@@ -410,7 +455,6 @@ block content
 											.new__block-btn_date 20.10.2020
 											.new__block-btn_more
 												a.btn(href="") Подробнее
-								.block-3__item
 									.new
 										.new__top
 											.new__pic
@@ -421,7 +465,6 @@ block content
 											.new__block-btn_date 20.10.2020
 											.new__block-btn_more
 												a.btn(href="") Подробнее
-								.block-3__item
 									.new
 										.new__top
 												.new__pic
@@ -432,7 +475,37 @@ block content
 											.new__block-btn_date 20.10.2020
 											.new__block-btn_more
 												a.btn(href="") Подробнее
-		section.section.section-feedback
+									.new
+										.new__top
+												.new__pic
+													img.new__pic_img(src="images/content/news/1.png", alt="")
+												.new__title Внимание! НОВЫЕ ГОСТы BIM!
+												.new__descrition Уже в этом году вышли новые стандарты применения технологий информационного моделирования. Переходите в нашу группу Вконтакте и сохраняйте себе, чтобы не потерять!
+										.new__block-btn
+											.new__block-btn_date 20.10.2020
+											.new__block-btn_more
+												a.btn(href="") Подробнее
+									.new
+										.new__top
+												.new__pic
+													img.new__pic_img(src="images/content/news/1.png", alt="")
+												.new__title Внимание! НОВЫЕ ГОСТы BIM!
+												.new__descrition Уже в этом году вышли новые стандарты применения технологий информационного моделирования. Переходите в нашу группу Вконтакте и сохраняйте себе, чтобы не потерять!
+										.new__block-btn
+											.new__block-btn_date 20.10.2020
+											.new__block-btn_more
+												a.btn(href="") Подробнее
+									.new
+										.new__top
+												.new__pic
+													img.new__pic_img(src="images/content/news/1.png", alt="")
+												.new__title Внимание! НОВЫЕ ГОСТы BIM!
+												.new__descrition Уже в этом году вышли новые стандарты применения технологий информационного моделирования. Переходите в нашу группу Вконтакте и сохраняйте себе, чтобы не потерять!
+										.new__block-btn
+											.new__block-btn_date 20.10.2020
+											.new__block-btn_more
+												a.btn(href="") Подробнее
+		section.section.section-feedback#feedback
 			.section-feedback-wrap
 				h2.section-title-text.section-title-text--white Контакты
 				.container
@@ -509,6 +582,7 @@ block content
 											a(class=`social__link social__link_${social[0]}` href=`${social[1]}` target="_blank")
 												svg.social__link_svg(width='100%' height='100%')
 													use(xlink:href=`images/icons/sprite.svg#${social[0]}`)
+		a(href="#hero").btn-top
 		.sale-block.active
 			.sale-block__pic
 				img.sale-block__pic_img(src="images/content/sale-img.png", alt="Скидка")

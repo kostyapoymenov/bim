@@ -70,6 +70,12 @@
     @include tablets {
       padding-right: 70px;
     }
+    .social__link_svg {
+      fill: $white;
+      &:hover {
+        fill: $orange;
+      }
+    }
   }
 }
 
@@ -85,6 +91,7 @@
     text-transform: uppercase;
     font-weight: 700;
     transition: all .3s ease;
+    color: $black;
     @include noute1300 {
       @include font-size (12px);
     }
@@ -279,6 +286,9 @@
   .course-inner {
     padding: 90px 50px 50px;
     background-color: #fff;
+    @include phones {
+      padding: 90px 15px 50px;
+    }
   }
 }
 
@@ -311,6 +321,16 @@
     width: 100px;
     border: 5px solid $white;
     z-index: -1;
+  }
+  &__content {
+    z-index: 1;
+    .course__btn {
+      display: none;
+      @include tablets {
+        display: block;    
+        margin-bottom: 15px;
+      }
+    }
   }
   &__title {
     margin-bottom: 50px;
@@ -354,7 +374,44 @@
       transform: translateY(-50%);
     }
   }
-  &--fish {
+  &__description {
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $darkGrey;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    @include tablets {
+      display: none;
+    }
+    &_text {
+      p {
+        margin-bottom: 10px;
+        color: $white;
+        text-align: left;
+        @include font-size(12px);
+      }
+    }
+    &_btn {
+      text-align: center;
+    }
+  }
+  &:hover{
+    .course__description {
+      display: flex;
+      @include tablets {
+        display: none;
+      }
+    }
+  }
+}
+.course--fish {
+  .course{
     &:before {
       display: none;
     }
@@ -401,38 +458,8 @@
       }
     }
   }
-  &__description {
-    position: absolute;
-    top:0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: $darkGrey;
-    padding: 20px;
+  @include phones {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1;
-    @include tablets {
-      overflow-y: scroll;
-    }
-    &_text {
-      p {
-        margin-bottom: 10px;
-        color: $white;
-        text-align: left;
-        @include font-size(12px);
-      }
-    }
-    &_btn {
-      text-align: center;
-
-    }
-  }
-  &:hover{
-    .course__description {
-      display: flex;
-    }
   }
 }
 
@@ -543,8 +570,18 @@
   .container-inner {
     overflow: hidden;
   }
+  .section-title-text {
+    margin: 50px 0 40px;
+    @include phones {
+      margin: 0px 0 40px;
+    }
+  }
   .owl-item {
     padding: 2px;
+  }
+  @include phones {
+    background-image: none;
+    background-color: $lightGrey;
   }
 }
 
@@ -627,6 +664,9 @@
     width: 15%;
     position: relative;
     margin: 10px 15px 30px;
+    @include phones {
+      width: 40%;
+    }
   }
   &_img {
     max-height: 100%;
@@ -646,11 +686,20 @@
   overflow: hidden;    
   padding-bottom: 40px;
   &__item {
-    padding: 40px 0 20px;
+    padding: 40px 0 0px;
     width: 80%;
     margin: 0 auto;
     @include noute950 {
       width: 95%;
+    }
+  }
+  .owl-carousel-2 {
+    .owl-item  {
+      display: flex;
+    }
+    .owl-stage-outer {
+      overflow: hidden;
+      margin-bottom: 30px;
     }
   }
 }
@@ -721,6 +770,9 @@
     flex: 1 1 50%;
     background-color: $darkGrey;
     padding: 50px 40px;
+    @include phones {
+      padding: 30px 15px;
+    }
   }
   &__right {
     flex: 1 1 50%;
@@ -768,6 +820,10 @@
 .form__body {
   display: flex;
   margin: 0 -10px 20px;
+  @include phones {
+    width: 100%;
+    margin: 0 auto;
+  }
   @include phones-xs {
     flex-direction: column;
   }
@@ -776,6 +832,9 @@
   margin: 0 10px;
   @include tablets {
     width: 50%;
+  }
+  @include phones {
+    margin: 0 0 10px;
   }
   @include phones-xs {
     width: 100%;
@@ -865,6 +924,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
+    @include phones-xs {
+      flex-direction: column;
+    }
   }
   &__left {
     display: flex;
@@ -942,7 +1004,7 @@
   }
   &__btn-show {
     position: absolute;
-    top: -1px;
+    top: 0;
     right: 100%;
     height: 30px;
     width: 20px;
@@ -983,5 +1045,36 @@
         border-radius: 2px;
       }
     }
+  }
+}
+.btn-top {
+  height: 44px;
+  width: 44px;
+  border: 2px solid #c4c4c4;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 25px;
+  opacity: .5;
+  transition: .3s;
+  z-index: 20;
+  &:hover {
+    opacity: 1;
+    transition: .3s;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 5px);
+    transform: rotate(45deg);
+    border: 2px solid #c4c4c4;
+    border-bottom: none;
+    border-right: none;
+    height: 10px;
+    width: 10px;
+  }
+  @include phones {
+    display: none;
   }
 }
